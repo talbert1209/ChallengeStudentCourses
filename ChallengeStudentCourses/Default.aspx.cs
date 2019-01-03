@@ -23,7 +23,9 @@ namespace ChallengeStudentCourses
              * Initializers.  Then, iterate through each Course and print
              * out the Course's details and the Students that are enrolled in
              * each Course.
-             */ 
+             */
+
+            resultLabel.Text = "";
 
             List<Student> cSharp101Students = new List<Student>()
             {
@@ -74,9 +76,41 @@ namespace ChallengeStudentCourses
              * Object and Collection Initializers.  Then, iterate through
              * each student and print out to the web page each Student's
              * info and the Courses the Student is enrolled in.
-             */ 
+             */
 
+            resultLabel.Text = "";
 
+            var students = new Dictionary<int, Student>()
+            {
+                {4792, new Student {Name = "Betty White", StudentId = 4792, Courses = new List<Course>()
+                {
+                    new Course(){Name = "Happiness 101", CourseId = 11324},
+                    new Course(){Name = "Love 101", CourseId = 64826},
+                    new Course(){Name = "prosperity 101", CourseId = 90837},
+                }}},
+                {7492, new Student {Name = "Martha Stewart", StudentId = 7492, Courses = new List<Course>()
+                {
+                    new Course(){Name = "Sadness 101", CourseId = 58393},
+                    new Course(){Name = "Anger 101", CourseId = 25482},
+                    new Course(){Name = "Jealousy 101", CourseId = 20462},
+                }}},
+                {6403, new Student {Name = "Paris Hilton", StudentId = 6403, Courses = new List<Course>()
+                {
+                    new Course(){Name = "Kindness 101", CourseId = 63410},
+                    new Course(){Name = "Compassion 101", CourseId = 83637},
+                    new Course(){Name = "Generosity 101", CourseId = 13253},
+                }}}
+            };
+
+            foreach (var student in students)
+            {
+                resultLabel.Text +=
+                    $"<h3>Student Name: {student.Value.Name} -- StudentID: {student.Value.StudentId}</h3>";
+                foreach (var studentCourse in student.Value.Courses)
+                {
+                    resultLabel.Text += $"CourseID: {studentCourse.CourseId} Course Name: {studentCourse.Name}</br>";
+                }
+            }
         }
 
         protected void assignment3Button_Click(object sender, EventArgs e)
