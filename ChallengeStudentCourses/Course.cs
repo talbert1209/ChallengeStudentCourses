@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace ChallengeStudentCourses
 {
@@ -10,5 +7,6 @@ namespace ChallengeStudentCourses
         public int CourseId { get; set; }
         public string Name { get; set; }
         public List<Student> Students { get; set; }
+        public Dictionary<int,Grade> StudentGrades { get; set; }
     }
 }

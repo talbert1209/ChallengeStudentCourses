@@ -121,9 +121,60 @@ namespace ChallengeStudentCourses
              * new requirement.  Give each Student a grade in each Course they
              * are enrolled in (make up the data).  Then, for each student, 
              * print out each Course they are enrolled in and their grade.
-             */ 
+             */
 
+            resultLabel.Text = "";
 
+            Course happiness101 = new Course() { Name = "Happiness 101", CourseId = 11324, StudentGrades = new Dictionary<int, Grade>()
+            {
+                { 4792, new Grade(89) },
+                { 9856, new Grade(91) },
+                { 6403, new Grade(66) },
+            }};
+            Course love101 = new Course() { Name = "Love 101", CourseId = 64826, StudentGrades = new Dictionary<int, Grade>()
+            {
+                { 4792, new Grade(92) },
+                { 9856, new Grade(74) },
+                { 6403, new Grade(87) },
+            }};
+            Course prosperity101 = new Course() { Name = "prosperity 101", CourseId = 90837, StudentGrades = new Dictionary<int, Grade>()
+            {
+                { 4792, new Grade(71) },
+                { 9856, new Grade(85) },
+                { 6403, new Grade(58) },
+            }};
+
+            var students = new Dictionary<int, Student>
+            {
+                {4792, new Student {Name = "Betty White", StudentId = 4792, Courses = new List<Course>
+                {
+                    happiness101,
+                    love101,
+                    prosperity101,
+                }}},
+                {7492, new Student {Name = "Martha Stewart", StudentId = 9856, Courses = new List<Course>
+                {
+                    happiness101,
+                    love101,
+                    prosperity101,
+                }}},
+                {6403, new Student {Name = "Paris Hilton", StudentId = 6403, Courses = new List<Course>
+                {
+                    happiness101,
+                    love101,
+                    prosperity101,
+                }}}
+            };
+
+            foreach (var student in students)
+            {
+                resultLabel.Text +=
+                    $"<h3>Student Name: {student.Value.Name} -- StudentID: {student.Value.StudentId}</h3>";
+                foreach (var studentCourse in student.Value.Courses)
+                {
+                    resultLabel.Text += $"CourseID: {studentCourse.CourseId} Course Name: {studentCourse.Name} Grade: {studentCourse.StudentGrades[student.Value.StudentId].FinalGrade}</br>";
+                }
+            }
         }
     }
 }
