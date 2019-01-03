@@ -25,6 +25,43 @@ namespace ChallengeStudentCourses
              * each Course.
              */ 
 
+            List<Student> cSharp101Students = new List<Student>()
+            {
+                new Student{Courses = new List<Course>(), Name = "Mark Jacobs", StudentId = 112},
+                new Student{Courses = new List<Course>(), Name = "Spencer Stewart", StudentId = 345},
+                new Student{Courses = new List<Course>(), Name = "Tyler Smith", StudentId = 768},
+                new Student{Courses = new List<Course>(), Name = "Nate Peterson", StudentId = 490},
+            };
+
+            List<Student> htmlAndCsStudents = new List<Student>()
+            {
+                new Student{Courses = new List<Course>(), Name = "Tina Todd", StudentId = 446},
+                new Student{Courses = new List<Course>(), Name = "Martha Smalls", StudentId = 809},
+                new Student{Courses = new List<Course>(), Name = "Sky Jenner", StudentId = 396},
+            };
+
+            List<Student> cSharp202Students = new List<Student>()
+            {
+                new Student{Courses = new List<Course>(), Name = "Paul Walker", StudentId = 561},
+                new Student{Courses = new List<Course>(), Name = "Peter Pan", StudentId = 677},
+                new Student{Courses = new List<Course>(), Name = "Michael Scott", StudentId = 294},
+            };
+
+            List<Course> courses = new List<Course>()
+            {
+                new Course(){CourseId = 123, Name = "CSharp 101", Students = cSharp101Students},
+                new Course(){CourseId = 234, Name = "HTML & CSS 101", Students = htmlAndCsStudents},
+                new Course(){CourseId = 456, Name = "CSharp 202", Students = cSharp202Students},
+            };
+
+            foreach (var course in courses)
+            {
+                resultLabel.Text += $"<h3>{course.Name} - {course.CourseId}</h3>";
+                foreach (var courseStudent in course.Students)
+                {
+                    resultLabel.Text += $"&nbsp&nbsp&nbsp&nbsp&nbspName: {courseStudent.Name} ID: {courseStudent.StudentId}</br>";
+                }
+            }
 
         }
 
