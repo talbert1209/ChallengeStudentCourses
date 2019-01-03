@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ChallengeStudentCourses
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,33 +25,33 @@ namespace ChallengeStudentCourses
 
             resultLabel.Text = "";
 
-            List<Student> cSharp101Students = new List<Student>()
+            List<Student> cSharp101Students = new List<Student>
             {
                 new Student{Courses = new List<Course>(), Name = "Mark Jacobs", StudentId = 112},
                 new Student{Courses = new List<Course>(), Name = "Spencer Stewart", StudentId = 345},
                 new Student{Courses = new List<Course>(), Name = "Tyler Smith", StudentId = 768},
-                new Student{Courses = new List<Course>(), Name = "Nate Peterson", StudentId = 490},
+                new Student{Courses = new List<Course>(), Name = "Nate Peterson", StudentId = 490}
             };
 
-            List<Student> htmlAndCsStudents = new List<Student>()
+            List<Student> htmlAndCsStudents = new List<Student>
             {
                 new Student{Courses = new List<Course>(), Name = "Tina Todd", StudentId = 446},
                 new Student{Courses = new List<Course>(), Name = "Martha Smalls", StudentId = 809},
-                new Student{Courses = new List<Course>(), Name = "Sky Jenner", StudentId = 396},
+                new Student{Courses = new List<Course>(), Name = "Sky Jenner", StudentId = 396}
             };
 
-            List<Student> cSharp202Students = new List<Student>()
+            List<Student> cSharp202Students = new List<Student>
             {
                 new Student{Courses = new List<Course>(), Name = "Paul Walker", StudentId = 561},
                 new Student{Courses = new List<Course>(), Name = "Peter Pan", StudentId = 677},
-                new Student{Courses = new List<Course>(), Name = "Michael Scott", StudentId = 294},
+                new Student{Courses = new List<Course>(), Name = "Michael Scott", StudentId = 294}
             };
 
-            List<Course> courses = new List<Course>()
+            List<Course> courses = new List<Course>
             {
-                new Course(){CourseId = 123, Name = "CSharp 101", Students = cSharp101Students},
-                new Course(){CourseId = 234, Name = "HTML & CSS 101", Students = htmlAndCsStudents},
-                new Course(){CourseId = 456, Name = "CSharp 202", Students = cSharp202Students},
+                new Course{CourseId = 123, Name = "CSharp 101", Students = cSharp101Students},
+                new Course{CourseId = 234, Name = "HTML & CSS 101", Students = htmlAndCsStudents},
+                new Course{CourseId = 456, Name = "CSharp 202", Students = cSharp202Students}
             };
 
             foreach (var course in courses)
@@ -81,25 +78,25 @@ namespace ChallengeStudentCourses
 
             resultLabel.Text = "";
 
-            var students = new Dictionary<int, Student>()
+            var students = new Dictionary<int, Student>
             {
-                {4792, new Student {Name = "Betty White", StudentId = 4792, Courses = new List<Course>()
+                {4792, new Student {Name = "Betty White", StudentId = 4792, Courses = new List<Course>
                 {
-                    new Course(){Name = "Happiness 101", CourseId = 11324},
-                    new Course(){Name = "Love 101", CourseId = 64826},
-                    new Course(){Name = "prosperity 101", CourseId = 90837},
+                    new Course {Name = "Happiness 101", CourseId = 11324},
+                    new Course {Name = "Love 101", CourseId = 64826},
+                    new Course {Name = "prosperity 101", CourseId = 90837}
                 }}},
-                {7492, new Student {Name = "Martha Stewart", StudentId = 7492, Courses = new List<Course>()
+                {7492, new Student {Name = "Martha Stewart", StudentId = 7492, Courses = new List<Course>
                 {
-                    new Course(){Name = "Sadness 101", CourseId = 58393},
-                    new Course(){Name = "Anger 101", CourseId = 25482},
-                    new Course(){Name = "Jealousy 101", CourseId = 20462},
+                    new Course {Name = "Sadness 101", CourseId = 58393},
+                    new Course {Name = "Anger 101", CourseId = 25482},
+                    new Course {Name = "Jealousy 101", CourseId = 20462}
                 }}},
-                {6403, new Student {Name = "Paris Hilton", StudentId = 6403, Courses = new List<Course>()
+                {6403, new Student {Name = "Paris Hilton", StudentId = 6403, Courses = new List<Course>
                 {
-                    new Course(){Name = "Kindness 101", CourseId = 63410},
-                    new Course(){Name = "Compassion 101", CourseId = 83637},
-                    new Course(){Name = "Generosity 101", CourseId = 13253},
+                    new Course {Name = "Kindness 101", CourseId = 63410},
+                    new Course {Name = "Compassion 101", CourseId = 83637},
+                    new Course {Name = "Generosity 101", CourseId = 13253}
                 }}}
             };
 
